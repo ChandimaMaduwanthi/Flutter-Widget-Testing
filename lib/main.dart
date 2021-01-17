@@ -43,6 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Enter Your Name',
+                  contentPadding: const EdgeInsets.only(left: 40.0,right: 40.0),
                   ),
                 ),
             ),
