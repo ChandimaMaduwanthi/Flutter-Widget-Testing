@@ -15,10 +15,13 @@ void main() {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());
 
-    await tester.enterText(find.byType(TextField),"Chandima");
+    expect(find.text(""), findsOneWidget);
+    expect(find.text("Name"), findsNothing);
+
+    await tester.enterText(find.byType(TextField),"Name");
     await tester.pump();
 
-    expect(find.text("Chandima"), findsOneWidget);
+    expect(find.text("Name"), findsOneWidget);
     expect(find.text(""), findsNothing);
   });
 }

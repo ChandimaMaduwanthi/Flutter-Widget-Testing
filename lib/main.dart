@@ -36,13 +36,17 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(100.0),
-          child: TextField(
-            decoration: InputDecoration(
-              hintText: 'Enter Your Name',
-              ),
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(100.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Enter Your Name',
+                  ),
+                ),
             ),
+          ],
         ),
       ),
     );
