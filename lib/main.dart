@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    DevicePreview(
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: DevicePreview.locale(context), // Add the locale here
+      builder: DevicePreview.appBuilder,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -39,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(100.0),
+              padding: const EdgeInsets.only(left: 25.0,right:25.0,top: 100.0),
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Enter Your Name',
